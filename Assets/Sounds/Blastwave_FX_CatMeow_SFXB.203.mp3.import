@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Blastwave_FX_CatMeow_SFXB.203.mp3-8d4a474b726affc16313c92e851904f8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Blastwave_FX_CatMeow_SFXB.203.mp3"
+dest_files=[ "res://.import/Blastwave_FX_CatMeow_SFXB.203.mp3-8d4a474b726affc16313c92e851904f8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

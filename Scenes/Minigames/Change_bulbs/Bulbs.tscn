@@ -1,0 +1,155 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scenes/Minigames/Change_bulbs/Old_bulb.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Minigames/Change_bulbs/New_bulb.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/light_bulb_box.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sounds/correct_answer.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/table_lamp.png" type="Texture" id=5]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/ceeling_lamp_1.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Minigames/Change_bulbs/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Minigames/Change_bulbs/Bulbs.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Minigames/Change_bulbs/Old_bulb2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/led_on.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Minigames/Change_bulbs/New_bulb2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/lightimage.png" type="Texture" id=12]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/bedroom_new_main_.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/ScoreMessage.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Minigames/Change_bulbs/Old_bulb4.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Minigames/Change_bulbs/New_bulb4.tscn" type="PackedScene" id=17]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 574.877, 540.271 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 36.0555
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 25.0799
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 48.0937
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 1.245, 1.245 )
+script = ExtResource( 8 )
+
+[node name="BedroomNewMain" type="Sprite" parent="."]
+position = Vector2( 771, 436.5 )
+scale = Vector2( 0.756014, 0.634306 )
+texture = ExtResource( 13 )
+
+[node name="New_bulb" parent="." instance=ExtResource( 2 )]
+position = Vector2( 814, 420 )
+
+[node name="New_bulb2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 775, 342 )
+
+[node name="New_bulb4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1054, 448 )
+
+[node name="Lightimage" type="Sprite" parent="."]
+position = Vector2( 120, 168 )
+rotation = -3.14159
+scale = Vector2( 0.112275, 0.0807388 )
+texture = ExtResource( 12 )
+
+[node name="LedOn1" type="Sprite" parent="."]
+position = Vector2( 122.646, 154.121 )
+rotation = -3.14159
+scale = Vector2( 0.0446807, 0.041331 )
+texture = ExtResource( 10 )
+
+[node name="Lightimage2" type="Sprite" parent="."]
+position = Vector2( 1056, 343 )
+scale = Vector2( 0.135376, 0.120239 )
+texture = ExtResource( 12 )
+
+[node name="LedOn2" type="Sprite" parent="."]
+position = Vector2( 1054, 325 )
+rotation = -3.14159
+scale = Vector2( 0.0474209, 0.0399394 )
+texture = ExtResource( 10 )
+
+[node name="Lightimage4" type="Sprite" parent="."]
+position = Vector2( 1427, 220 )
+scale = Vector2( 0.197266, 0.189453 )
+texture = ExtResource( 12 )
+
+[node name="LedOn4" type="Sprite" parent="."]
+position = Vector2( 1422, 184 )
+rotation = 3.14159
+scale = Vector2( 0.0655905, 0.0667615 )
+texture = ExtResource( 10 )
+
+[node name="Old_bulb" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2, 27 )
+
+[node name="Old_bulb2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 933, 201 )
+
+[node name="Old_bulb4" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1298, 82 )
+scale = Vector2( 0.756014, 0.634306 )
+
+[node name="LightBulbBox" type="Sprite" parent="."]
+position = Vector2( 127, 752.5 )
+scale = Vector2( 0.145508, 0.137207 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="LightBulbBox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightBulbBox/Area2D"]
+position = Vector2( 62.877, 104.702 )
+shape = SubResource( 1 )
+
+[node name="CeelingLamp1" type="Sprite" parent="."]
+position = Vector2( 119.875, 135.25 )
+scale = Vector2( 0.118286, 0.129638 )
+texture = ExtResource( 6 )
+
+[node name="TableLamp" type="Sprite" parent="."]
+position = Vector2( 1024, 340 )
+scale = Vector2( 0.101563, 0.129883 )
+texture = ExtResource( 5 )
+
+[node name="CeelingLamp2" type="Sprite" parent="."]
+position = Vector2( 1416, 159 )
+scale = Vector2( 0.16626, 0.156982 )
+texture = ExtResource( 6 )
+
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="Area2D2_bulb1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2_bulb1"]
+position = Vector2( 121, 146 )
+shape = SubResource( 5 )
+
+[node name="Area2D2_bulb2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2_bulb2"]
+position = Vector2( 1053, 321 )
+shape = SubResource( 4 )
+
+[node name="Area2D2_bulb4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2_bulb4"]
+position = Vector2( 1419, 167 )
+shape = SubResource( 7 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="ScoreMessage" parent="." instance=ExtResource( 14 )]
+
+[connection signal="area_shape_entered" from="LightBulbBox/Area2D" to="Old_bulb" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_entered" from="LightBulbBox/Area2D" to="Old_bulb2" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_entered" from="LightBulbBox/Area2D" to="Old_bulb4" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_entered" from="Area2D2_bulb1" to="New_bulb" method="_on_Area2D2_bulb1_area_shape_entered"]
+[connection signal="area_shape_entered" from="Area2D2_bulb2" to="New_bulb2" method="_on_Area2D2_bulb2_area_shape_entered"]
+[connection signal="area_shape_entered" from="Area2D2_bulb4" to="New_bulb4" method="_on_Area2D_area_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

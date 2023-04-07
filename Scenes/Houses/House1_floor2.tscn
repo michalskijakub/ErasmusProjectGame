@@ -1,0 +1,337 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Art/Images/Houses/house1_floor2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Houses/House1_floor2.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Houses/Highlight.gd" type="Script" id=4]
+[ext_resource path="res://Art/Minigame art/RubbishFriend/New Piskel.png" type="Texture" id=5]
+[ext_resource path="res://Art/Minigame art/RubbishFriend/paper_rubbish_friend.png" type="Texture" id=6]
+[ext_resource path="res://Art/Minigame art/RubbishFriend/shoe_lace_rubbish_friend_.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 44.75, 70 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 47, 72.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 80.5, 103 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 293, 117 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 120.5, 187.5 )
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0.10559, 0.664596, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.681529, 0.681529, 0.681529, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 9 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 15.0
+flag_disable_z = true
+spread = 46.77
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 8 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 865.512, 565.587 )
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Shoelace:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 455, 745 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shoelace:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Paper:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Paper:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1603, 387 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Shoelace:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Paper:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "pickup_paper"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Paper:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 3, 3 ), Vector2( 3, 3 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Paper:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1603, 387 ), Vector2( 977, 592 ), Vector2( 977, 592 ), Vector2( 233, 1140 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Paper:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "pickup_shoelace"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Shoelace:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 455, 745 ), Vector2( 964, 640 ), Vector2( 964, 640 ), Vector2( 234, 1142 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shoelace:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 3, 3 ), Vector2( 3, 3 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shoelace:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="House1_floor2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="House" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="House"]
+position = Vector2( 1010.5, 549.001 )
+scale = Vector2( 1.613, 1.308 )
+texture = ExtResource( 2 )
+
+[node name="Collisionwalls" type="StaticBody2D" parent="House"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Collisionwalls"]
+position = Vector2( 516.25, 793 )
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="House/Collisionwalls"]
+polygon = PoolVector2Array( 572, 985, 571, 621, 597, 622, 613, 643, 614, 939, 934, 939, 932, 685, 949, 661, 1292, 662, 1300, 668, 1301, 709, 1291, 718, 1264, 727, 981, 727, 981, 942, 1193, 944, 1193, 810, 1272, 811, 1273, 939, 1455, 936, 1455, 985 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House/Collisionwalls"]
+polygon = PoolVector2Array( 1457, 977, 1454, 662, 1477, 662, 1491, 677, 1515, 679, 1514, 937, 1745, 937, 1751, 660, 1646, 662, 1642, 464, 1757, 466, 1756, 405, 1585, 407, 1580, 147, 1506, 146, 1503, 562, 1478, 547, 1453, 546, 1454, 475, 1427, 492, 1104, 491, 1087, 461, 1088, 448, 1459, 454, 1458, 98, 1794, 99, 1795, 984 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="House/Collisionwalls"]
+position = Vector2( 1, 0 )
+polygon = PoolVector2Array( 1085, 444, 1087, 418, 1116, 417, 1116, 351, 1398, 353, 1398, 417, 1454, 417, 1454, 111, 1408, 113, 1438, 207, 1348, 207, 1300, 135, 1302, 230, 768, 231, 719, 208, 719, 151, 199, 153, 199, 210, 602, 210, 602, 417, 933, 418, 942, 452, 140, 452, 139, 95, 1465, 98, 1466, 455 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="House/Collisionwalls"]
+polygon = PoolVector2Array( 943, 457, 926, 492, 616, 489, 607, 521, 574, 522, 551, 499, 527, 497, 526, 529, 507, 546, 389, 546, 349, 517, 349, 498, 285, 498, 284, 514, 312, 533, 314, 571, 277, 600, 234, 600, 193, 567, 186, 935, 253, 936, 251, 908, 224, 875, 223, 810, 273, 748, 298, 748, 343, 787, 352, 811, 352, 876, 327, 916, 325, 938, 572, 937, 571, 985, 141, 984, 141, 450 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="House/Collisionwalls"]
+position = Vector2( 1686, 812.5 )
+shape = SubResource( 5 )
+
+[node name="Stairs" type="Area2D" parent="House"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Stairs"]
+position = Vector2( 1068.5, 835 )
+shape = SubResource( 2 )
+
+[node name="WardrobeGame" type="Area2D" parent="House"]
+
+[node name="Wardrobe" type="CollisionShape2D" parent="House/WardrobeGame"]
+position = Vector2( 1005, 241 )
+shape = SubResource( 3 )
+
+[node name="WardrobeHighlight" type="Polygon2D" parent="House/WardrobeGame"]
+position = Vector2( 74.4537, 110.492 )
+scale = Vector2( 0.954479, 0.353846 )
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( 669, 41, 673.191, 275.565, 687.859, 272.739, 695.192, 298.174, 708.812, 298.174, 724.528, 343.391, 980.165, 343.391, 1285.04, 346.217, 1286.09, 91.8695, 1279.8, 43.8261, 832, 46 )
+script = ExtResource( 4 )
+Width = 3.0
+
+[node name="ThrowGarbageGame" type="Area2D" parent="House"]
+
+[node name="Garbage" type="CollisionShape2D" parent="House/ThrowGarbageGame"]
+position = Vector2( 1629.5, 752.5 )
+shape = SubResource( 4 )
+
+[node name="GarbageHighlight" type="Polygon2D" parent="House/ThrowGarbageGame"]
+position = Vector2( -102, -66 )
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( 1779, 949, 1803, 949, 1824, 938, 1841, 923, 1841, 902, 1830, 886, 1808, 869, 1773, 869, 1755, 881, 1740, 900, 1741, 917, 1755, 936 )
+script = ExtResource( 4 )
+Width = 3.0
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1229, 765 )
+scale = Vector2( 1.75, 1.75 )
+
+[node name="Paper" type="Area2D" parent="."]
+position = Vector2( 1603, 387 )
+rotation = -1.07512
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Paper"]
+position = Vector2( -210, 697 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 6 )
+offset = Vector2( 4340.27, -13731.8 )
+
+[node name="Particles2D" type="Particles2D" parent="Paper"]
+position = Vector2( -3, 7.49994 )
+amount = 4
+lifetime = 2.0
+process_material = SubResource( 10 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paper"]
+position = Vector2( -29.2141, 7.45258 )
+rotation = 1.57255
+scale = Vector2( 0.1, 0.1 )
+shape = SubResource( 11 )
+
+[node name="Shoelace" type="Area2D" parent="."]
+position = Vector2( 455, 745 )
+rotation = -3.87463
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Shoelace"]
+position = Vector2( -210, 697 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 7 )
+offset = Vector2( 4340.27, -13731.8 )
+
+[node name="Particles2D" type="Particles2D" parent="Shoelace"]
+position = Vector2( -3, 7.49994 )
+amount = 4
+lifetime = 2.0
+process_material = SubResource( 10 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shoelace"]
+position = Vector2( -29.2141, 7.45258 )
+rotation = 1.57255
+scale = Vector2( 0.1, 0.1 )
+shape = SubResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 12 )
+anims/pickup_paper = SubResource( 13 )
+anims/pickup_shoelace = SubResource( 14 )
+
+[connection signal="body_entered" from="House/Stairs" to="." method="_on_Stairs_body_entered"]
+[connection signal="body_entered" from="House/WardrobeGame" to="." method="_on_WardrobeGame_body_entered"]
+[connection signal="body_exited" from="House/WardrobeGame" to="." method="_on_WardrobeGame_body_exited"]
+[connection signal="body_entered" from="House/ThrowGarbageGame" to="." method="_on_ThrowGarbageGame_body_entered"]
+[connection signal="body_exited" from="House/ThrowGarbageGame" to="." method="_on_ThrowGarbageGame_body_exited"]
+[connection signal="body_entered" from="Paper" to="." method="_on_Paper_body_entered"]
+[connection signal="body_exited" from="Paper" to="." method="_on_Paper_body_exited"]
+[connection signal="body_entered" from="Shoelace" to="." method="_on_Shoelace_body_entered"]
+[connection signal="body_exited" from="Shoelace" to="." method="_on_Shoelace_body_exited"]

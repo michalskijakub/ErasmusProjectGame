@@ -1,0 +1,38 @@
+[
+  {
+    "question": "Wat wordt er met ingezameld  \nplastic gedaan?", "correct_answer": "Het wordt bewerkt om \n er nieuw plastic van te maken.", "wrong_answer1": "Het wordt schoongemaakt en \n dan kan je het weer gebruiken.", "wrong_answer2": "Het is onbruikbaar \n en wordt weggegooid.", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "Hoe lang duurt het voordat een \nbananenschil is verteerd?", "correct_answer": "Minstens 1 jaar", "wrong_answer1": "een half jaar", "wrong_answer2": "2 maanden", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "Waarom mag een kapotte \novenschaal niet bij het oude glas?", "correct_answer": "Een ovenschaal wordt gemaakt van ander glas", "wrong_answer1": "Omdat hij niet door het gaatje in de container past. ", "wrong_answer2": "Omdat het glas van een ovenschaal niet te recyclen is. ", "explanation": "Een ovenschaal is van een ander soort glas dan 'verpakkingsglas'. \n Het glas van een ovenschaal smelt op een hogere temperatuur dan verpakkingsglas. ", "is_asked": "0"
+  },
+  {
+    "question": "Hoelang duurt het voordat een \nplastic fles is verteerd? ", "correct_answer": "Oneindig lang", "wrong_answer1": "50 jaar", "wrong_answer2": "100 jaar", "explanation": "Een plastic fles verteert nooit!", "is_asked": "0"
+  },
+  {
+    "question": "Waar wordt papier van gemaakt?", "correct_answer": "Van houtvezels en oud papier", "wrong_answer1": "Van de papyrusplant", "wrong_answer2": "Van zand", "explanation": "Nieuw papier wordt van houtvezels gemaakt. Oud papier wordt gerecycled om nieuw papier van te maken.", "is_asked": "0"
+  },
+  {
+    "question": "Hoe lang duurt het voordat \nkauwgom is verteerd? ", "correct_answer": "Minstens 20 jaar", "wrong_answer1": "Ongeveer 1 jaar", "wrong_answer2": "Ongeveer 50 jaar", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "Kan een pizzadoos bij \nhet oud papier?", "correct_answer": "Nee", "wrong_answer1": "Ja", "wrong_answer2": "Het maakt niet uit waar je hem weggooit.", "explanation": "Een pizzadoos heeft vaak nog etensresten en vet. Daardoor kan hij niet gerecycled worden. Een pizzadoos moet daarom bij het restafval", "is_asked": "0"
+  },
+  {
+    "question": "Moet je glazen potjes met \nvoedselresten eerst afwassen \nvoordat je ze in de glasbak gooit?", "correct_answer": "Nee, maar je moet ze wel leegmaken", "wrong_answer1": "Ja, ze moeten schoon zijn", "wrong_answer2": "Nee, je kan ze zo weggooien zonder leeg te maken.", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "Hoeveel kilo luiers poept en plast \neen baby in één maand vol? ", "correct_answer": "22 kilo", "wrong_answer1": "10 kilo", "wrong_answer2": "50 kilo", "explanation": "Een baby gebruikt wel 150 luiers per maand!", "is_asked": "0"
+  },
+  {
+    "question": "Hoeveel kilo voedsel gooien we \ngemiddeld per persoon per jaar \nthuis weg?", "correct_answer": "34 kilo", "wrong_answer1": "20 kilo", "wrong_answer2": "10 kilo", "explanation": "In Nederland is dat 34 kilo, zonde! Als we zorgen voor minder voedselverspilling is het beter voor het milieu!", "is_asked": "0"
+  },
+  {
+    "question": "Hoe komt plastic dat wij gebruiken \nin de zee terecht? ", "correct_answer": "Via rivieren stroomt het naar de zee", "wrong_answer1": "Het afval wordt rechstreeks in zee gegooid", "wrong_answer2": "Via het rioolwater", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "Kan een chipszak bij het plastic afval?", "correct_answer": "Nee", "wrong_answer1": "Ja", "wrong_answer2": "Het maakt niet uit waar je hem weggooit.", "explanation": "Een chipszak is wel van plastic, maar er zit ook een laagje aluminium in. Dat is een metaal, en mag niet bij het plastic.", "is_asked": "0"
+  }
+]

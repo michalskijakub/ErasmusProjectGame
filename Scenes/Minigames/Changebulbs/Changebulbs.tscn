@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Art/Minigame art/Bulbs_image/bedroom_new_main_.png" type="Texture" id=1]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/New/green_lamp_old_bulb.png" type="Texture" id=2]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/New/green_lamp_new_bulb.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Minigames/Changebulbs/Bulb.gd" type="Script" id=4]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/New/lamp_usual_turned_off.png" type="Texture" id=5]
+[ext_resource path="res://Art/Minigame art/Bulbs_image/New/big_lamp.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Minigames/Changebulbs/Changebulbs.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.5, 34.5 )
+
+[node name="Changebulbs" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( 961.5, 540 )
+scale = Vector2( 0.943054, 0.785401 )
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 1198, 272 )
+scale = Vector2( 1.4, 1.5 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.80005, 1.95001 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( -1, 2 )
+scale = Vector2( 0.053833, 0.0530635 )
+texture = ExtResource( 5 )
+
+[node name="Old" type="Sprite" parent="."]
+position = Vector2( 1196.7, 161.45 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="New" type="Sprite" parent="."]
+visible = false
+position = Vector2( 2334, 464 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="Empty" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1196, 152 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_Area2D_input_event"]

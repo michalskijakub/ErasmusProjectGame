@@ -1,0 +1,152 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Art/Images/three_houses.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/HouseSelect.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/HouseHighlight.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sounds/doorslam.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/SpeechBubble.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Art/Images/contstruction_worker.png" type="Texture" id=6]
+[ext_resource path="res://Art/Images/Progressbar/empty_bar_background_.png" type="Texture" id=7]
+[ext_resource path="res://Art/Images/Progressbar/houses_over.png" type="Texture" id=8]
+[ext_resource path="res://Art/Images/Progressbar/red_bar.png" type="Texture" id=9]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("construction worker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -100, 500 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "entry"
+tracks/0/type = "value"
+tracks/0/path = NodePath("construction worker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -100, 500 ), Vector2( 150, 500 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "exit"
+tracks/0/type = "value"
+tracks/0/path = NodePath("construction worker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 150, 500 ), Vector2( -100, 500 ) ]
+}
+
+[node name="HouseSelect" type="Node2D"]
+scale = Vector2( 3.12, 1.74 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 307, 310 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )
+
+[node name="House1Button" type="TextureButton" parent="."]
+margin_left = 69.0
+margin_top = 201.0
+margin_right = 224.0
+margin_bottom = 453.0
+
+[node name="House1Highlight" type="Polygon2D" parent="."]
+color = Color( 0.976471, 0.831373, 0.164706, 0 )
+polygon = PoolVector2Array( 70, 451, 226, 452, 228, 199, 67, 201 )
+script = ExtResource( 3 )
+Width = 3.0
+
+[node name="House2Button" type="TextureButton" parent="."]
+margin_left = 240.0
+margin_top = 260.0
+margin_right = 383.0
+margin_bottom = 458.0
+
+[node name="House2Highlight" type="Polygon2D" parent="."]
+position = Vector2( 171, 5 )
+color = Color( 0.976471, 0.831373, 0.164706, 0 )
+polygon = PoolVector2Array( 70, 451, 209, 450, 212, 250, 70, 251 )
+script = ExtResource( 3 )
+Width = 3.0
+
+[node name="House3Button" type="TextureButton" parent="."]
+margin_left = 383.0
+margin_top = 195.0
+margin_right = 522.0
+margin_bottom = 460.0
+
+[node name="House3Highlight" type="Polygon2D" parent="."]
+position = Vector2( 315.479, -125.383 )
+scale = Vector2( 0.978873, 1.29353 )
+color = Color( 0.976471, 0.831373, 0.164706, 0 )
+polygon = PoolVector2Array( 70, 451, 209.957, 451, 210.978, 249.227, 68.9784, 249.227 )
+script = ExtResource( 3 )
+Width = 3.0
+
+[node name="DoorSlam" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="construction worker" type="Sprite" parent="."]
+position = Vector2( -100, 500 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/entry = SubResource( 2 )
+anims/exit = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="AnimationPlayer"]
+wait_time = 6.0
+one_shot = true
+
+[node name="Score" type="Control" parent="."]
+margin_left = 115.064
+margin_top = 218.966
+margin_right = 232.064
+margin_bottom = 390.966
+rect_scale = Vector2( 0.3, 0.3 )
+
+[node name="TextureProgress" type="TextureProgress" parent="Score"]
+margin_left = 67.0
+margin_top = -553.0
+margin_right = 1316.0
+margin_bottom = -440.0
+max_value = 375.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 9 )
+texture_progress_offset = Vector2( 34, 20 )
+
+[node name="Sprite" type="Sprite" parent="Score"]
+position = Vector2( 533.12, -611.111 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+
+[node name="SpeechBubble" parent="." instance=ExtResource( 5 )]
+position = Vector2( 91.9872, 78.1609 )
+scale = Vector2( 0.3, 0.3 )
+
+[connection signal="pressed" from="House1Button" to="." method="_on_House1Button_pressed"]
+[connection signal="pressed" from="House2Button" to="." method="_on_House2Button_pressed"]
+[connection signal="pressed" from="House3Button" to="." method="_on_House3Button_pressed"]
+[connection signal="timeout" from="AnimationPlayer/Timer" to="." method="_on_Timer_timeout"]

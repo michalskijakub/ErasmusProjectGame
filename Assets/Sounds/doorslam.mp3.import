@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/doorslam.mp3-5a190aa5116e12cb3ecee1fedff6319c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/doorslam.mp3"
+dest_files=[ "res://.import/doorslam.mp3-5a190aa5116e12cb3ecee1fedff6319c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

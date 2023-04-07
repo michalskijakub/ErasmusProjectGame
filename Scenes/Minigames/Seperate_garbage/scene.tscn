@@ -1,0 +1,200 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Scenes/Minigames/Seperate_garbage/Glass.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Minigames/Seperate_garbage/Plastic.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Art/Minigame art/Separate_image/glass_bin.png" type="Texture" id=3]
+[ext_resource path="res://Art/Minigame art/Separate_image/Organic_bin.png" type="Texture" id=4]
+[ext_resource path="res://Art/Minigame art/Separate_image/metal_bin.png" type="Texture" id=5]
+[ext_resource path="res://Art/Minigame art/Separate_image/plastic_bin.png" type="Texture" id=6]
+[ext_resource path="res://Art/Minigame art/Separate_image/battery_text.png" type="Texture" id=7]
+[ext_resource path="res://Art/Minigame art/Separate_image/paper_bin.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Minigames/Seperate_garbage/BIO.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Art/Minigame art/Separate_image/store_recycle_game.jpg" type="Texture" id=10]
+[ext_resource path="res://Art/Minigame art/Separate_image/main_character.png" type="Texture" id=11]
+[ext_resource path="res://Art/Minigame art/Separate_image/Organic.png" type="Texture" id=12]
+[ext_resource path="res://Art/Minigame art/Separate_image/Paper.png" type="Texture" id=13]
+[ext_resource path="res://Art/Minigame art/Separate_image/Plastic.png" type="Texture" id=14]
+[ext_resource path="res://Art/Minigame art/Separate_image/Metal.png" type="Texture" id=15]
+[ext_resource path="res://Art/Minigame art/Separate_image/Glass.png" type="Texture" id=16]
+[ext_resource path="res://Art/Minigame art/Separate_image/battery_box.png" type="Texture" id=17]
+[ext_resource path="res://Art/Minigame art/Separate_image/plastic_and_glass_bottles_for_machine_.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Minigames/Seperate_garbage/HUD.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Minigames/Seperate_garbage/scene.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Minigames/Seperate_garbage/Battery.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Minigames/Seperate_garbage/Metal.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Minigames/Seperate_garbage/paper.tscn" type="PackedScene" id=23]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 55.5, 67.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 59.5, 71.5001 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 52.5, 66.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 54.5001, 66.0001 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 54, 69.5001 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 266.139, 309.967 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 39.3846, 46.9787 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 20 )
+
+[node name="StoreRecycleGame" type="Sprite" parent="."]
+position = Vector2( 761, 431 )
+scale = Vector2( 0.736328, 0.734375 )
+texture = ExtResource( 10 )
+
+[node name="Glass" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( -358.536, 202.893 )
+scale = Vector2( 0.467792, 0.487031 )
+texture = ExtResource( 16 )
+
+[node name="Battery" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( -554.101, 232.851 )
+scale = Vector2( 0.370018, 0.477905 )
+texture = ExtResource( 7 )
+
+[node name="Plastic" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( -177.91, 204.255 )
+scale = Vector2( 0.39428, 0.370314 )
+texture = ExtResource( 14 )
+
+[node name="Metal" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( 351.746, 219.234 )
+scale = Vector2( 0.434942, 0.5 )
+texture = ExtResource( 15 )
+
+[node name="Paper" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( 171.12, 219.234 )
+scale = Vector2( 0.434942, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="Organic" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( 2.71619, 194.723 )
+scale = Vector2( 0.434942, 0.5 )
+texture = ExtResource( 12 )
+
+[node name="GlassBin" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( -381.623, 276.425 )
+scale = Vector2( 1.35809, 1.3617 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="StoreRecycleGame/GlassBin"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoreRecycleGame/GlassBin/Area2D"]
+position = Vector2( 13.5, 49.5001 )
+shape = SubResource( 1 )
+
+[node name="MetalBin" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( 332.732, 306.383 )
+scale = Vector2( 1.35809, 1.3617 )
+texture = ExtResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="StoreRecycleGame/MetalBin"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoreRecycleGame/MetalBin/Area2D"]
+position = Vector2( 10.5001, 46.5001 )
+shape = SubResource( 4 )
+
+[node name="OrganicBin" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( -19.0132, 276.425 )
+scale = Vector2( 1.35809, 1.3617 )
+texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="StoreRecycleGame/OrganicBin"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoreRecycleGame/OrganicBin/Area2D"]
+position = Vector2( 12.5, 48.5001 )
+shape = SubResource( 2 )
+
+[node name="PaperBin" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( 156.18, 298.213 )
+scale = Vector2( 1.35809, 1.3617 )
+texture = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="StoreRecycleGame/PaperBin"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoreRecycleGame/PaperBin/Area2D"]
+position = Vector2( 13.5003, 41.9998 )
+shape = SubResource( 6 )
+
+[node name="PlasticBin" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( -202.355, 280.51 )
+scale = Vector2( 1.35809, 1.3617 )
+texture = ExtResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="StoreRecycleGame/PlasticBin"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoreRecycleGame/PlasticBin/Area2D"]
+position = Vector2( 12.9996, 49.5005 )
+shape = SubResource( 3 )
+
+[node name="BatteryBox" type="Sprite" parent="StoreRecycleGame"]
+position = Vector2( -557.496, 344.851 )
+scale = Vector2( 0.176393, 0.200133 )
+texture = ExtResource( 17 )
+
+[node name="Area2D" type="Area2D" parent="StoreRecycleGame/BatteryBox"]
+position = Vector2( 50.0483, -52.731 )
+scale = Vector2( 1.5188, 1.22924 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoreRecycleGame/BatteryBox/Area2D"]
+position = Vector2( 7.60364, 119.005 )
+shape = SubResource( 5 )
+
+[node name="Paper_object" parent="." instance=ExtResource( 23 )]
+position = Vector2( 875, 362 )
+
+[node name="Glass_object" parent="." instance=ExtResource( 1 )]
+position = Vector2( 825, 222 )
+
+[node name="Metal_object" parent="." instance=ExtResource( 22 )]
+position = Vector2( 870, 167 )
+
+[node name="Plastic_object" parent="." instance=ExtResource( 2 )]
+position = Vector2( 787, 217 )
+
+[node name="Organic_object" parent="." instance=ExtResource( 9 )]
+position = Vector2( 509, 328 )
+
+[node name="Battery_object" parent="." instance=ExtResource( 21 )]
+position = Vector2( 724, 130 )
+
+[node name="MainCharacter" type="Sprite" parent="."]
+position = Vector2( 1198.25, 705 )
+scale = Vector2( 1.35, 1.384 )
+texture = ExtResource( 11 )
+
+[node name="PlasticAndGlassBottlesForMachine" type="Sprite" parent="."]
+position = Vector2( 667, 179 )
+scale = Vector2( 0.476444, 0.394231 )
+texture = ExtResource( 18 )
+
+[node name="HUD" parent="." instance=ExtResource( 19 )]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 761, 431 )
+scale = Vector2( 0.736328, 0.734375 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -230.875, -132.766 )
+scale = Vector2( 1, 0.999999 )
+shape = SubResource( 7 )
+
+[connection signal="area_shape_entered" from="StoreRecycleGame/GlassBin/Area2D" to="Glass_object" method="_on_Area2D_area_shape_entered2"]
+[connection signal="area_shape_entered" from="StoreRecycleGame/MetalBin/Area2D" to="Metal_object" method="_on_Area2D_area_shape_entered6"]
+[connection signal="area_shape_entered" from="StoreRecycleGame/OrganicBin/Area2D" to="Organic_object" method="_on_Area2D_area_shape_entered4"]
+[connection signal="area_shape_entered" from="StoreRecycleGame/PaperBin/Area2D" to="Paper_object" method="_on_Area2D_area_shape_entered5"]
+[connection signal="area_shape_entered" from="StoreRecycleGame/PlasticBin/Area2D" to="Plastic_object" method="_on_Area2D_area_shape_entered3"]
+[connection signal="area_shape_entered" from="StoreRecycleGame/BatteryBox/Area2D" to="Battery_object" method="_on_Area2D_area_shape_entered1"]
+[connection signal="area_shape_entered" from="Area2D" to="Glass_object" method="_on_Area2D_area_shape_entered_extra2"]
+[connection signal="area_shape_entered" from="Area2D" to="Plastic_object" method="_on_Area2D_area_shape_entered_extra"]

@@ -1,0 +1,141 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_9.png" type="Texture" id=1]
+[ext_resource path="res://Art/Minigame art/light/lampandbulb.png" type="Texture" id=2]
+[ext_resource path="res://Art/Minigame art/Tshirt/background_wardrobe_game_.png" type="Texture" id=3]
+[ext_resource path="res://Art/Minigame art/light/lightimage.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/SpeechBubble.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Minigames/SwitchLights/SwitchLights.gd" type="Script" id=6]
+[ext_resource path="res://Art/Minigame art/Tshirt/wardrobe.png" type="Texture" id=7]
+[ext_resource path="res://Art/Images/player/main_character_neutral.png" type="Texture" id=8]
+[ext_resource path="res://Art/Minigame art/light/switch_off.png" type="Texture" id=9]
+[ext_resource path="res://Art/Minigame art/light/switch_on.png" type="Texture" id=10]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_11.png" type="Texture" id=11]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_1.png" type="Texture" id=12]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_4.png" type="Texture" id=13]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_5.png" type="Texture" id=14]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_7.png" type="Texture" id=15]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_13.png" type="Texture" id=16]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_2.png" type="Texture" id=17]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_14.png" type="Texture" id=18]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_10.png" type="Texture" id=19]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_3.png" type="Texture" id=20]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_8.png" type="Texture" id=21]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_15.png" type="Texture" id=22]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation1/cat_6.png" type="Texture" id=23]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_9.png" type="Texture" id=24]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_3.png" type="Texture" id=25]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_4.png" type="Texture" id=26]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_8.png" type="Texture" id=27]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_2.png" type="Texture" id=28]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_1.png" type="Texture" id=29]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_6.png" type="Texture" id=30]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_5.png" type="Texture" id=31]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_10.png" type="Texture" id=32]
+[ext_resource path="res://Art/Minigame art/Throwgarbage/CatAnimation2/cat_hiss_7.png" type="Texture" id=33]
+[ext_resource path="res://Art/CalibriSmall.tres" type="DynamicFont" id=34]
+[ext_resource path="res://Scenes/ScoreMessage.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Assets/Sounds/light_switch.wav" type="AudioStream" id=36]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 1072, 225, 1202, 225, 1237, 233, 1274, 245, 1287, 227, 1286, 196, 1261, 175, 1227, 164, 1179, 157, 1100, 157, 1052, 168, 1016, 180, 995, 196, 995, 227, 1011, 246, 1032, 231 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 23 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "hiss",
+"speed": 5.0
+} ]
+
+[node name="SwitchLights" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( -1535.2, -248.843 )
+scale = Vector2( 0.935059, 0.523926 )
+texture = ExtResource( 3 )
+offset = Vector2( 2665.82, 1497.05 )
+
+[node name="Wardrobe" type="Sprite" parent="."]
+position = Vector2( 396, 573 )
+scale = Vector2( 0.3, 0.4 )
+texture = ExtResource( 7 )
+
+[node name="Lightbulb" type="Sprite" parent="."]
+position = Vector2( 1100, 157 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="Lightbulb"]
+position = Vector2( -8, 492 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+shadow_enabled = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Lightbulb/Light2D"]
+position = Vector2( -1138, -284 )
+occluder = SubResource( 1 )
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 1644, 741 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 8 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 1783.0
+margin_top = 420.0
+margin_right = 1848.0
+margin_bottom = 510.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lightswitch_off" type="Sprite" parent="TextureButton"]
+position = Vector2( 30.0001, 45.0001 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 9 )
+
+[node name="Lightswitch_on" type="Sprite" parent="TextureButton"]
+position = Vector2( 30.0001, 45 )
+scale = Vector2( 0.414286, 0.421198 )
+texture = ExtResource( 10 )
+
+[node name="SpeechBubble" parent="." instance=ExtResource( 5 )]
+position = Vector2( 757, 727 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="ScoreMessage" parent="." instance=ExtResource( 35 )]
+visible = false
+position = Vector2( 3, -1 )
+
+[node name="Cat" type="AnimatedSprite" parent="."]
+position = Vector2( 688, 912 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 2 )
+frame = 5
+speed_scale = 0.5
+playing = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1321.0
+margin_top = 948.0
+margin_right = 1871.0
+margin_bottom = 1033.0
+custom_fonts/font = ExtResource( 34 )
+text = "Verder met het spel!"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SwitchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 36 )
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

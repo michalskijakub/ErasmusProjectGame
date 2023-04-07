@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/toilet_flush.mp3-0c71bbdc27f01ae96b0888e7dce5b313.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/toilet_flush.mp3"
+dest_files=[ "res://.import/toilet_flush.mp3-0c71bbdc27f01ae96b0888e7dce5b313.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

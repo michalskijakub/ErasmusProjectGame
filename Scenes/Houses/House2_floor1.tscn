@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Houses/House2_floor1.gd" type="Script" id=1]
+[ext_resource path="res://Art/Images/Houses/house2_floor1.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Houses/Highlight.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sounds/toilet_flush.mp3" type="AudioStream" id=5]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 270, 83.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 74.5, 5.54688 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 96.75, 112 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 93.4688, 71.625 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 62.25, 29 )
+
+[node name="House2_floor1" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( 995, 558 )
+scale = Vector2( 1.61309, 1.30784 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1000, 1000 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D/StaticBody2D"]
+polygon = PoolVector2Array( 189, 128, 188, 233, 345, 231, 346, 570, 200, 570, 199, 683, 483, 682, 498, 703, 496, 722, 479, 732, 465, 731, 463, 753, 440, 772, 396, 785, 394, 735, 205, 734, 215, 949, 394, 953, 396, 882, 447, 882, 471, 897, 470, 980, 496, 985, 497, 999, 166, 1002, 166, 112 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D/StaticBody2D"]
+polygon = PoolVector2Array( 187, 127, 190, 207, 497, 211, 538, 183, 537, 162, 1765, 160, 1762, 654, 1658, 655, 1639, 676, 1640, 834, 1262, 833, 1261, 898, 1118, 897, 1117, 879, 1049, 877, 1048, 716, 1010, 678, 668, 676, 658, 684, 656, 724, 670, 735, 688, 735, 689, 812, 713, 844, 751, 847, 769, 742, 985, 736, 987, 1000, 1826, 1001, 1823, 113, 165, 111 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D/StaticBody2D"]
+polygon = PoolVector2Array( 551, 282, 576, 270, 621, 272, 621, 199, 770, 191, 756, 269, 758, 556, 739, 578, 554, 578 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
+position = Vector2( 1326, 404.5 )
+shape = SubResource( 9 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Area2D/StaticBody2D"]
+polygon = PoolVector2Array( 653, 1000, 653, 984, 697, 984, 696, 969, 720, 950, 749, 950, 749, 975, 1005, 974, 1005, 1002 )
+
+[node name="Frontdoor" type="Area2D" parent="Area2D"]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area2D/Frontdoor"]
+position = Vector2( 572, 1020 )
+scale = Vector2( 1.75, 1.75 )
+shape = SubResource( 6 )
+
+[node name="Stairs" type="Area2D" parent="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Stairs"]
+position = Vector2( 887, 850 )
+shape = SubResource( 7 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 578, 876 )
+scale = Vector2( 2, 2 )
+
+[node name="DishWashergame" type="Area2D" parent="."]
+position = Vector2( -191, 1028 )
+
+[node name="Dishwasher" type="CollisionShape2D" parent="DishWashergame"]
+position = Vector2( 1094, 301 )
+shape = SubResource( 8 )
+
+[node name="DishwasherHighlight" type="Polygon2D" parent="DishWashergame"]
+position = Vector2( 35, 216 )
+scale = Vector2( 0.954479, 0.353846 )
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( 1035.12, 322.174, 1028.83, 570.87, 1185.99, 573.696, 1181.8, 327.826 )
+script = ExtResource( 4 )
+Width = 3.0
+
+[node name="ReplaceLights" type="Area2D" parent="."]
+
+[node name="ReplaceLights" type="CollisionShape2D" parent="ReplaceLights"]
+position = Vector2( 866.531, 251.375 )
+shape = SubResource( 8 )
+
+[node name="ReplaceHighlight" type="Polygon2D" parent="ReplaceLights"]
+position = Vector2( -243, 263 )
+scale = Vector2( 0.954479, 0.353846 )
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( 903.111, -146.957, 905.206, 25.4348, 1061.31, 31.087, 1062.36, -206.304, 946.066, -206.304 )
+script = ExtResource( 4 )
+Width = 3.0
+
+[node name="Toilet" type="Area2D" parent="."]
+position = Vector2( 1653, 918 )
+
+[node name="ToiletFlush" type="AudioStreamPlayer" parent="Toilet"]
+stream = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toilet"]
+position = Vector2( -1358.75, 4 )
+shape = SubResource( 10 )
+
+[connection signal="body_entered" from="Area2D/Frontdoor" to="." method="_on_Frontdoor_body_entered"]
+[connection signal="body_entered" from="Area2D/Stairs" to="." method="_on_Stairs_body_entered"]
+[connection signal="body_entered" from="DishWashergame" to="." method="_on_DishWashergame_body_entered"]
+[connection signal="body_exited" from="DishWashergame" to="." method="_on_DishWashergame_body_exited"]
+[connection signal="body_entered" from="ReplaceLights" to="." method="_on_ReplaceLights_body_entered"]
+[connection signal="body_exited" from="ReplaceLights" to="." method="_on_ReplaceLights_body_exited"]
+[connection signal="body_entered" from="Toilet" to="." method="_on_Toilet_body_entered"]

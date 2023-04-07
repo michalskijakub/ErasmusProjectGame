@@ -1,0 +1,38 @@
+[
+  {
+    "question": "Zonnepanel wekken alleen stroom \nop als de zon schijnt", "correct_answer": "Zonnepanelen wekken ook stroom op als de zon niet schijnt.", "wrong_answer1": "Klopt!", "wrong_answer2": "Klopt niet, ze werken 24 uur per dag", "explanation": "Wel als de zon niet schijnt, maar niet ’s nachts.", "is_asked": "0"
+  },
+  {
+    "question": "Hoe vaak kun je een oplaadbare \nbatterij hergebruiken", "correct_answer": "Meer dan 100 keer", "wrong_answer1": "27 keer", "wrong_answer2": "60 keer", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "In een elektriciteitscentrale:", "correct_answer": "Brengen ze water aan de kook, waardoor stoom ontstaat", "wrong_answer1": "Verbranden ze gas om elektriciteit op te wekken", "wrong_answer2": "Verbranden ze biomassa om elektriciteit op te wekken", "explanation": "Alle antwoorden zijn goed!", "is_asked": "0"
+  },
+  {
+    "question": "Iemand die elektriciteit aansluit noem je:", "correct_answer": "Een elektricien", "wrong_answer1": "Een bouwvakker", "wrong_answer2": "Een monteur", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "De eerste batterij is uitgevonden door:", "correct_answer": "Professor Volta", "wrong_answer1": "Albert Einstein", "wrong_answer2": "Electra", "explanation": "Daar komt de naam Volt vandaan.", "is_asked": "0"
+  },
+  {
+    "question": "De eerste batterij is uitgevonden in:", "correct_answer": "Het jaar 1800", "wrong_answer1": "Het jaar 1900", "wrong_answer2": "Het jaar 2000", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "Het eerste echte elektrische \napparaat was:", "correct_answer": "De stofzuiger", "wrong_answer1": "De TV", "wrong_answer2": "De mixer", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "Welk apparaat verbruikt de meeste \nstroom per uur.", "correct_answer": "De wasdroger", "wrong_answer1": "De vaatwasser", "wrong_answer2": "De diepvries", "explanation": "Als het mooi weer is kan je de was beter buiten drogen.", "is_asked": "0"
+  },
+  {
+    "question": "Wat levert groene energie?", "correct_answer": "Een windmolen", "wrong_answer1": "Een verffabriek", "wrong_answer2": "Een bloemkoolcentrale", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "Wat is het meest energiezuinig?", "correct_answer": "Een ledlamp", "wrong_answer1": "Een gloeilamp", "wrong_answer2": "Een halogeenlamp", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "Elektriciteitsdraden hebben een kleur \nvoor de veiligheid. \nWelke kleur hebben ze nooit?", "correct_answer": "Paars", "wrong_answer1": "Blauw", "wrong_answer2": "Bruin", "explanation": "", "is_asked": "0"
+  },
+  {
+    "question": "De kast in jouw huis waar stroom \nbinnenkomt en wordt verdeeld heet: ", "correct_answer": "De meterkast", "wrong_answer1": "De elektriciteitskast", "wrong_answer2": "De klerenkast", "explanation": "In de meterkast wordt de elektriciteit verdeeld en jouw verbruik wordt gemeten.", "is_asked": "0"
+  }
+]

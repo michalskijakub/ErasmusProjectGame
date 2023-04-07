@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Houses/Highlight.gd" type="Script" id=1]
+[ext_resource path="res://Art/Images/Houses/house2_floor2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Houses/House2_floor2.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 43.25, 70.25 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 91, 109.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 133.5, 83.4375 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 116.125, 115.063 )
+
+[node name="House2_floor2" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1010.5, 549.001 )
+scale = Vector2( 1.613, 1.308 )
+texture = ExtResource( 2 )
+
+[node name="House" type="Area2D" parent="."]
+
+[node name="Collisionshapes" type="StaticBody2D" parent="House"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House/Collisionshapes"]
+polygon = PoolVector2Array( 177, 102, 177, 990, 523, 988, 520, 667, 495, 669, 458, 684, 457, 855, 228, 855, 229, 409, 386, 409, 383, 153, 468, 151, 468, 570, 520, 550, 519, 495, 867, 498, 891, 462, 887, 421, 522, 423, 516, 225, 1109, 225, 1134, 206, 1133, 157, 1397, 157, 1403, 382, 1714, 382, 1714, 157, 1778, 157, 1776, 426, 1044, 424, 1031, 450, 1031, 474, 1048, 495, 1365, 496, 1370, 529, 1402, 529, 1424, 505, 1447, 505, 1447, 536, 1462, 549, 1584, 550, 1624, 520, 1624, 505, 1689, 509, 1660, 543, 1659, 567, 1693, 601, 1738, 604, 1785, 570, 1786, 942, 1718, 930, 1749, 884, 1748, 816, 1701, 754, 1682, 754, 1624, 814, 1621, 877, 1658, 942, 1400, 945, 1400, 627, 1370, 630, 1359, 657, 1362, 947, 1042, 944, 1042, 689, 1021, 662, 679, 669, 670, 676, 675, 719, 716, 734, 996, 732, 996, 956, 774, 954, 779, 819, 699, 816, 700, 945, 546, 942, 542, 992, 1837, 990, 1835, 104 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Collisionshapes"]
+position = Vector2( 1457.75, 799.75 )
+shape = SubResource( 6 )
+
+[node name="Stairs" type="Area2D" parent="House"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Stairs"]
+position = Vector2( 903, 842.5 )
+shape = SubResource( 3 )
+
+[node name="SwitchLights" type="Area2D" parent="House"]
+
+[node name="SwitchLights" type="CollisionShape2D" parent="House/SwitchLights"]
+position = Vector2( 966.5, 335.438 )
+shape = SubResource( 4 )
+
+[node name="Gadgetgame" type="Area2D" parent="House"]
+
+[node name="Gadget" type="CollisionShape2D" parent="House/Gadgetgame"]
+position = Vector2( 346.875, 740.063 )
+shape = SubResource( 5 )
+
+[node name="GadgetHighlight" type="Polygon2D" parent="House/Gadgetgame"]
+position = Vector2( -1448.75, 36.2065 )
+scale = Vector2( 0.964912, 0.967391 )
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( 1932.56, 917.719, 1933.6, 891.876, 1774, 892.91, 1772.96, 920.82 )
+script = ExtResource( 1 )
+Width = 3.0
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 656, 775 )
+scale = Vector2( 2, 2 )
+
+[connection signal="body_entered" from="House/Stairs" to="." method="_on_Stairs_body_entered"]
+[connection signal="body_entered" from="House/SwitchLights" to="." method="_on_SwitchLights_body_entered"]
+[connection signal="body_exited" from="House/SwitchLights" to="." method="_on_SwitchLights_body_exited"]
+[connection signal="body_entered" from="House/Gadgetgame" to="." method="_on_Gadgetgame_body_entered"]
+[connection signal="body_exited" from="House/Gadgetgame" to="." method="_on_Gadgetgame_body_exited"]

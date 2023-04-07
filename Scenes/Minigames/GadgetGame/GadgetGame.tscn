@@ -1,0 +1,148 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scenes/Minigames/Throwgarbage/Cat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ScoreMessage.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/SpeechBubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Minigames/GadgetGame/GadgetGame.gd" type="Script" id=4]
+[ext_resource path="res://Art/Pixeltype.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Art/Minigame art/GadgetGame/tooth_brush_cheap.png" type="Texture" id=6]
+[ext_resource path="res://Art/Minigame art/GadgetGame/computer_for._electronics_.png" type="Texture" id=7]
+[ext_resource path="res://Art/Minigame art/GadgetGame/battery_green.png" type="Texture" id=8]
+[ext_resource path="res://Art/Minigame art/GadgetGame/Medium_tooth_brush.png" type="Texture" id=9]
+[ext_resource path="res://Art/Minigame art/GadgetGame/solar_panel.png" type="Texture" id=10]
+[ext_resource path="res://Art/Minigame art/GadgetGame/expencive_tooth_brush.png" type="Texture" id=11]
+[ext_resource path="res://Art/Minigame art/GadgetGame/electric_plug.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sounds/correct_answer.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Sounds/wrong_answer.mp3" type="AudioStream" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 180
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 180
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 180
+font_data = ExtResource( 5 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Computer" type="Sprite" parent="."]
+position = Vector2( 1041, 580 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Expensive" type="Sprite" parent="Computer"]
+position = Vector2( 532, 20 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 11 )
+
+[node name="SolarPanel" type="Sprite" parent="Computer/Expensive"]
+position = Vector2( 605.714, -405.714 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Computer/Expensive"]
+margin_left = 141.905
+margin_top = 60.0
+margin_right = 1003.91
+margin_bottom = 817.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Prijs: 70 euro
+
+Opladen: Gratis!
+(zonnepaneel)"
+
+[node name="ExpensiveButton" type="TextureButton" parent="Computer/Expensive"]
+margin_left = -344.0
+margin_top = -849.0
+margin_right = 1056.0
+margin_bottom = 1220.0
+
+[node name="Medium" type="Sprite" parent="Computer"]
+position = Vector2( -10, 20 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 9 )
+
+[node name="Charger" type="Sprite" parent="Computer/Medium"]
+position = Vector2( 538.096, -476.19 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Computer/Medium"]
+margin_left = 171.0
+margin_top = 60.0
+margin_right = 1071.0
+margin_bottom = 831.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Prijs: 60 euro
+
+Opladen: 5 euro per jaar
+(accu)"
+
+[node name="MediumButton" type="TextureButton" parent="Computer/Medium"]
+margin_left = -339.0
+margin_top = -841.0
+margin_right = 1082.0
+margin_bottom = 1233.0
+
+[node name="Cheap" type="Sprite" parent="Computer"]
+position = Vector2( -556, 20 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 6 )
+
+[node name="Battery" type="Sprite" parent="Computer/Cheap"]
+position = Vector2( 382.857, -640 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Computer/Cheap"]
+margin_left = 164.762
+margin_top = 60.0
+margin_right = 1112.76
+margin_bottom = 984.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Prijs: 50 euro
+
+Opladen: 10 euro per jaar
+(batterijen)"
+
+[node name="CheapButton" type="TextureButton" parent="Computer/Cheap"]
+margin_left = -330.0
+margin_top = -833.0
+margin_right = 1095.0
+margin_bottom = 1233.0
+
+[node name="Cat" parent="." instance=ExtResource( 1 )]
+position = Vector2( 198, 301 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="SpeechBubble" parent="Cat" instance=ExtResource( 3 )]
+position = Vector2( 154, -606 )
+scale = Vector2( 2, 2 )
+
+[node name="ScoreMessage" parent="." instance=ExtResource( 2 )]
+
+[node name="EndGameTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="Correct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="Wrong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[connection signal="pressed" from="Computer/Expensive/ExpensiveButton" to="." method="_on_ExpensiveButton_pressed"]
+[connection signal="pressed" from="Computer/Medium/MediumButton" to="." method="_on_MediumButton_pressed"]
+[connection signal="pressed" from="Computer/Cheap/CheapButton" to="." method="_on_CheapButton_pressed"]
+[connection signal="timeout" from="EndGameTimer" to="." method="_on_EndGameTimer_timeout"]
